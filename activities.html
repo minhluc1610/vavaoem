@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 30px;
+            font-family: 'Courier';
+            background-color: #FFFF99;
+            color: #FF9494;
+        }
+        #activityquestion {
+            font-size: 50px;
+            margin-bottom: 30px;
+        }
+        .activity-item {
+            display: inline-block;
+            margin: 10px;
+            vertical-align: top;
+            color: #FF9494;
+        }
+        .activity-item img {
+            width: 220px; 
+            height: auto;
+            padding: 10px;
+        }
+        .activity-item label {
+            display: block;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 10px;
+            font-family: 'courier';
+            margin-bottom: 20px;
+            background-color: #e67373;
+            color: white;
+            border-radius: 12px;
+            border: 2px solid #FFE3E1;
+        }
+    </style>
+</head>
+<body>
+    <div id="activityquestion"><b>Đi chơi nữa thoiiii </b></div>
+    <div id="activityquestion"><b>(p/s: có thể chọn nhiều mục cùng lúc)</b></div>
+    <div class="activities-selection">
+        <div class="activity-item">
+            <img src="food/rapphim.jpg" alt="aquarium">
+            <label><input type="checkbox" name="activities" value="aquarium">xem phimmm</label>
+        </div>
+        <div class="activity-item">
+            <img src="food/totuong.jpg" alt="arcade">
+            <label><input type="checkbox" name="activities" value="arcade">tô tượng</label>
+        </div>
+
+		<div class="activity-item">
+            <img src="food/chuphinh.jpg" alt="arcade">
+            <label><input type="checkbox" name="activities" value="arcade">đi chụp hình</label>
+        </div>
+
+		<div class="activity-item">
+            <img src="food/daosaigon.jpg" alt="arcade">
+            <label><input type="checkbox" name="activities" value="arcade">đi dạo sài gòn</label>
+        </div>
+        <!-- Add a line break before the third activity-item -->
+        <br>
+        <div class="activity-item">
+            <label>
+                <input type="checkbox" name="activities" value="cinema" onchange="toggleText(this)">special idea mục trước ~~
+            </label>
+            <span id="displayText" style="display: none;">Này phải bàn đi đâu, a đang nghĩ khum chơi đc nơi đông người, nơi ... ~~</span>
+        </div>
+    </div>
+    <button class="button" onclick="location.href='lastpage.html'">Last page</button>
+
+    <script>
+        function toggleText(checkbox) {
+            var displayText = document.getElementById('displayText');
+            displayText.style.display = checkbox.checked ? 'inline' : 'none';
+        }
+    </script>
+
+	
+</body>
+</html>

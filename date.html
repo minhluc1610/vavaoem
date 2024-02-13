@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Free Date</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFFF99	;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-top: 50px;
+			color: #FE7696
+        }
+		h2 {
+            
+			color: #FE7696
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+			color: #FE7696;
+        }
+
+        .form-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .date-input, .time-input {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+            width: 200px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #e67373;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #e67373;
+        }
+        
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Find Your Free Date</h1>
+    <p>Nào e rảnh, e đừng lườiiiiii</p>
+
+
+    <!-- Additional Content for Entertainment -->
+    <div style="margin-top: 50px;">
+        <h2>Let's Make It Special!</h2>
+        <p>How about a surprise date idea? lollllll</p>
+        <button class="button" onclick="showDateIdea()">Show Me!</button>
+        <p id="dateIdea" style="display: none; margin-top: 20px;">Chơi drinking game uwu!</p>
+    </div>
+
+    <script>
+        function showDateIdea() {
+            var dateIdea = document.getElementById('dateIdea');
+            dateIdea.style.display = 'block';
+            setTimeout(function() {
+                dateIdea.style.display = 'none';
+            }, 100);
+        }
+    </script>
+
+
+	<form action="/action_page.php" class="form-group">
+		<label for="dateInput">Which day:</label>
+            <input type="date" id="dateInput" class="date-input" required>
+            <label for="timeInput"> At :</label>
+            <input type="time" id="timeInput" class="time-input" required>
+		<button class="button" type="submit" formaction="food.html">Submit</button>
+	</form>
+</body>
+</html>
