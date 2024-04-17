@@ -11,6 +11,18 @@
             font-family: 'Courier';
             background-color: #FFFF99;
             color: #FF9494;
+            opacity: 0; /* Initially hide all content */
+            animation: slideIn 1s forwards; /* Apply slide-in animation */
+        }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         #activityquestion {
             font-size: 50px;
@@ -49,35 +61,33 @@
     <div id="activityquestion"><b>(p/s: có thể chọn nhiều mục cùng lúc)</b></div>
     <div class="activities-selection">
         <div class="activity-item">
-            <img src="food/rapphim.jpg" alt="aquarium">
+            <img src="rapphim.jpg" alt="aquarium">
             <label><input type="checkbox" name="activities" value="aquarium">xem phimmm</label>
         </div>
         <div class="activity-item">
-            <img src="food/totuong.jpg" alt="arcade">
+            <img src="totuong.jpg" alt="arcade">
             <label><input type="checkbox" name="activities" value="arcade">tô tượng</label>
         </div>
 
 		<div class="activity-item">
-            <img src="food/chuphinh.jpg" alt="arcade">
+            <img src="chuphinh.jpg" alt="arcade">
             <label><input type="checkbox" name="activities" value="arcade">đi chụp hình</label>
         </div>
 
 		<div class="activity-item">
-            <img src="food/daosaigon.jpg" alt="arcade">
+            <img src="daosaigon.jpg" alt="arcade">
             <label><input type="checkbox" name="activities" value="arcade">đi dạo sài gòn</label>
         </div>
         <!-- Add a line break before the third activity-item -->
         <br>
-        <div class="activity-item">
-            <label>
-                <input type="checkbox" name="activities" value="cinema" onchange="toggleText(this)">special idea mục trước ~~
-            </label>
-            <span id="displayText" style="display: none;">Này phải bàn đi đâu, a đang nghĩ khum chơi đc nơi đông người, nơi ... ~~</span>
-        </div>
-    </div>
-    <button class="button" onclick="location.href='lastpage.html'">Last page</button>
+            </div>
+    <button class="button" onclick="location.href='letter.html'">Có lá thư đang đợi bạn!!!!</button>
 
     <script>
+        // Delay the animation until the page is fully loaded
+        window.onload = function() {
+            document.body.style.opacity = 1;
+        };
         function toggleText(checkbox) {
             var displayText = document.getElementById('displayText');
             displayText.style.display = checkbox.checked ? 'inline' : 'none';

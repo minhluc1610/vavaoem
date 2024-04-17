@@ -11,25 +11,43 @@
             font-family: 'Courier';
             background-color: #FFFF99;
             color: #FF9494;
+            opacity: 0; /* Initially hide all content */
+            animation: slideIn 1s forwards; /* Apply slide-in animation */
         }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         #foodquestion {
             font-size: 50px;
             margin-bottom: 30px;
         }
+
         .food-item {
             display: inline-block;
             margin: 10px;
             vertical-align: top;
-			color: #FF9494;
+            color: #FF9494;
         }
+
         .food-item img {
-            width: 220px; 
+            width: 220px;
             height: auto;
-			padding: 10px;
+            padding: 10px;
         }
+
         .food-item label {
             display: block;
         }
+
         .button {
             padding: 10px 20px;
             font-size: 18px;
@@ -49,24 +67,29 @@
     
     <div class="food-selection">
         <div class="food-item">
-            <img src="food/bundau.jpg" alt="bundau">
+            <img src="bundau.jpg" alt="bundau">
             <label><input type="checkbox" name="food" value="bundau"> Bún Đậu nơi tình yêu thăng hoa</label>
         </div>
         <div class="food-item">
-            <img src="food/dooki.jpg" alt="dooki">
+            <img src="dooki.jpg" alt="dooki">
             <label><input type="checkbox" name="food" value="dooki"> Dooki, mê cách e pha sốt</label>
         </div>
         <div class="food-item">
-            <img src="food/donchicken.jpg" alt="donchicken">
-            <label><input type="checkbox" name="food" value="Korean food"> Don chicken ò ó o</label>
+            <img src="donchicken.jpg" alt="donchicken">
+            <label><input type="checkbox" name="food" value="Korean food"> Hải đì lao</label>
         </div>
         <div class="food-item">
-            <img src="food/sashimi.jpg" alt="sashimi">
+            <img src="sashimi.jpg" alt="sashimi">
             <label><input type="checkbox" name="food" value="pasta"> Sashimi chưa nghĩ ra</label>
         </div>
-        
     </div>
-    <button class ="button"onclick="location.href='dessert.html'">Ăn xong gòi mình làm gì ????</button>
+    <button class="button" onclick="location.href='dessert.html'">Ăn xong gòi mình làm gì ????</button>
     
+    <script>
+        // Delay the animation until the page is fully loaded
+        window.onload = function() {
+            document.body.style.opacity = 1;
+        };
+    </script>
 </body>
 </html>

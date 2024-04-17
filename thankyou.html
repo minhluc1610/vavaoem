@@ -4,43 +4,130 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thank you</title>
-	<style>
-		body {
+    <style>
+        body {
             text-align: center;
             margin-top: 30px;
             font-family: 'Courier';
             background-color: #FFFF99;
             color: #FF9494;
+            opacity: 0; /* Initially hide the content */
+            animation: slideIn 1s ease forwards; /* Apply slide-in animation */
         }
-		#thankyou {
-			font-size: 50px;
-			margin-bottom: 20px;
-		}
-		.rizz {
-			margin-bottom: 10 px;
-		}
-		.button {
+
+        #thankyou {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .rizz {
+            margin-bottom: 10px;
+        }
+
+        .button {
             padding: 10px 20px;
             font-size: 18px;
             cursor: pointer;
             margin: 10px;
             font-family: 'courier';
             margin-bottom: 20px;
-            background-color:#FFE3E1;
+            background-color: #FFE3E1;
             color: #e67373;
             border-radius: 12px;
             border: 2px solid #FFE3E1;
         }
-	</style>
+
+        /* Define keyframes for slide-in animation */
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Fireworks animation */
+        .fireworks-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .firework {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            border-radius: 50%;
+            animation: fireworks 2s ease-out infinite;
+        }
+
+        @keyframes fireworks {
+            0% {
+                opacity: 1;
+                transform: translateY(0) rotate(0deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-300px) rotate(360deg);
+            }
+        }
+
+        .firework::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 0;
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            border-radius: 50%;
+            animation: sparks 1s linear infinite;
+        }
+
+        @keyframes sparks {
+            0% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0.2) translateY(100px);
+            }
+        }
+    </style>
 </head>
 <body>
-	<div id="thankyou"><b>Vại là hăm bấm No ở trang trước gòi phải hăm =))))</b></div>
+    <div class="fireworks-container">
+        <!-- Firework particles -->
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+    </div>
 
-	<img id = "rizz" src = 'food/ezgif-7-5385e7d4a8.gif' alt = "cuoi god" class="responsive">
-    <img id = "rizz" src = 'food/db5e5eda4a2e40fd9308f5a125db60df.gif' alt = "chay nuoc mieng" class="responsive">
+    <div id="thankyou"><b>Vại là hăm bấm No ở trang trước gòi phải hăm =))))</b></div>
 
-	<br>
+    <img src="ezgif-7-5385e7d4a8.gif" alt="cuoi god" class="responsive rizz">
+    <img src="db5e5eda4a2e40fd9308f5a125db60df.gif" alt="chay nuoc mieng" class="responsive rizz">
+
+    <br>
    
-	<button class="button" onclick="location.href='date.html'"> Được ròi lên plan ahihiiiii</button>
+    <button class="button" onclick="location.href='date.html'"> Được ròi lên plan ahihiiiii</button>
+
+    <script>
+        // Add an event listener to wait for the page to load
+        window.addEventListener('load', function() {
+            // Set the opacity to 1 to show the content after the delay
+            setTimeout(function() {
+                document.body.style.opacity = '1';
+            }, 2000); // Wait for 2 seconds before showing the content
+        });
+    </script>
 </body>
 </html>

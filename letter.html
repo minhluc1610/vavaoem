@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter</title>
+    <style>
+        body {
+            background: #FFFF99;
+            margin: 0;
+            padding: 0;
+        }
+
+        .letter-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 600px; /* Increased width */
+            height: 600px; /* Increased height */
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+        }
+
+        .animated-mail {
+            position: absolute;
+            height: 450px; /* Increased height */
+            width: 600px; /* Increased width */
+            transition: .4s;
+        }
+
+        .body {
+            position: absolute;
+            bottom: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 0 300px 600px; /* Increased border width */
+            border-color: transparent transparent #e95f55 transparent;
+            z-index: 2;
+        }
+
+        .top-fold {
+            position: absolute;
+            top: 150px; /* Increased top position */
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 150px 300px 0 300px; /* Increased border width */
+            transform-origin: 50% 0%;
+            transition: transform .4s .4s, z-index .2s .4s;
+            border-color: #cf4a43 transparent transparent transparent;
+            z-index: 2;
+        }
+
+        .back-fold {
+            position: absolute;
+            bottom: 0;
+            width: 600px; /* Increased width */
+            height: 300px; /* Increased height */
+            background: #cf4a43;
+            z-index: 0;
+        }
+
+        .left-fold {
+            position: absolute;
+            bottom: 0;
+            width: 50%;
+            height: 0;
+            border-style: solid;
+            border-width: 150px 0 150px 300px; /* Increased border width */
+            border-color: transparent transparent transparent #e15349;
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        .left-fold a {
+            display: block;
+            height: 100%;
+            width: 100%;
+            color: white;
+            text-align: center;
+            line-height: 150px; /* Adjusted line height */
+            text-decoration: none;
+        }
+
+        .letter {
+            left: 60px; /* Increased left margin */
+            bottom: 0px;
+            position: absolute;
+            width: 480px; /* Increased width */
+            height: 180px; /* Increased height */
+            background: white;
+            z-index: 1;
+            overflow: hidden;
+            transition: .4s .2s;
+        }
+
+        .letter-border {
+            height: 30px; /* Increased height */
+            width: 100%;
+            background: repeating-linear-gradient(
+                -45deg,
+                #cb5a5e,
+                #cb5a5e 16px,
+                transparent 16px,
+                transparent 36px
+            );
+        }
+
+        .letter-title {
+            margin-top: 30px; /* Increased margin */
+            margin-left: 20px; /* Increased margin */
+            height: 30px; /* Increased height */
+            width: 100%; /* Increased width */
+            color: #cb5a5e;
+        }
+
+        .letter-context {
+            margin-top: 30px; /* Increased margin */
+            margin-left: 20px; /* Increased margin */
+            margin-right: 20px; /* Increased margin */
+            height: 30px; /* Increased height */
+            width: 90%; /* Increased width */
+            font-size: 16px; /* Increased font size */
+            color: #cb5a5e;
+        }
+
+        .letter-stamp {
+            margin-top: 90px; /* Increased margin */
+            margin-left: 360px; /* Increased margin */
+            border-radius: 100%;
+            height: 90px; /* Increased height */
+            width: 90px; /* Increased width */
+            background: #cb5a5e;
+            opacity: 0.3;
+        }
+
+        .shadow {
+            position: absolute;
+            top: 600px; /* Increased top position */
+            left: 50%;
+            width: 1200px; /* Increased width */
+            height: 120px; /* Increased height */
+            transition: .4s;
+            transform: translateX(-50%);
+            border-radius: 100%;
+            background: radial-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.0), rgba(0,0,0,0.0));
+        }
+
+        .letter-image:hover .animated-mail {
+            transform: translateY(150px); /* Increased translateY */
+        }
+
+        .letter-image:hover .top-fold {
+            transition: transform .4s, z-index .2s;
+            transform: rotateX(180deg);
+            z-index: 0;
+        }
+
+        .letter-image:hover .letter {
+            height: 540px; /* Increased height */
+        }
+
+        .letter-image:hover .shadow {
+            width: 900px; /* Increased width */
+        }
+    </style>
+</head>
+<body>
+    <div class="letter-image">
+        <div class="animated-mail">
+            <div class="back-fold"></div>
+            <div class="letter">
+                <div class="letter-border"></div>
+                <div class="letter-title">Tựa đề</div>
+                <div class="letter-context"> Chưa kịp nghĩ ra để viết gì luôn á, shao mà trùng hợp dữ, ngta lên plan gòi</div>
+                <div class="letter-context"> </div>
+                <div class="letter-stamp">
+                    <div class="letter-stamp-inner"></div>
+                </div>
+            </div>
+            <div class="top-fold"></div>
+            <div class="body"></div>
+            <div class="left-fold">
+                <a href="heartpuzzle.html">Bấm tui sau khi đọc</a>
+            </div>
+        </div>
+        <div class="shadow"></div>
+    </div>
+</body>
+</html>

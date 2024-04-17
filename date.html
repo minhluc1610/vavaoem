@@ -14,20 +14,37 @@
             text-align: center;
         }
 
+        .slide-in {
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: slideInAnimation 0.5s ease forwards;
+        }
+
+        @keyframes slideInAnimation {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         h1 {
             font-size: 36px;
             margin-top: 50px;
-			color: #FE7696
+            color: #FE7696
         }
-		h2 {
-            
-			color: #FE7696
+
+        h2 {
+            color: #FE7696
         }
 
         p {
             font-size: 18px;
             margin-bottom: 30px;
-			color: #FE7696;
+            color: #FE7696;
         }
 
         .form-group {
@@ -74,16 +91,19 @@
     </style>
 </head>
 <body>
-    <h1>Find Your Free Date</h1>
-    <p>Nào e rảnh, e đừng lườiiiiii</p>
+    <div class="slide-in">
+        <h1>Find Your Free Date</h1>
+        <p>Nào e rảnh sau lễ</p>
 
-
-    <!-- Additional Content for Entertainment -->
-    <div style="margin-top: 50px;">
-        <h2>Let's Make It Special!</h2>
-        <p>How about a surprise date idea? lollllll</p>
-        <button class="button" onclick="showDateIdea()">Show Me!</button>
-        <p id="dateIdea" style="display: none; margin-top: 20px;">Chơi drinking game uwu!</p>
+        <!-- Additional Content for Entertainment -->
+        
+        <form action="/action_page.php" class="form-group">
+            <label for="dateInput">Which day:</label>
+            <input type="date" id="dateInput" class="date-input" required>
+            <label for="timeInput"> At :</label>
+            <input type="time" id="timeInput" class="time-input" required>
+            <button class="button" type="submit" formaction="food.html">Submit</button>
+        </form>
     </div>
 
     <script>
@@ -95,14 +115,5 @@
             }, 100);
         }
     </script>
-
-
-	<form action="/action_page.php" class="form-group">
-		<label for="dateInput">Which day:</label>
-            <input type="date" id="dateInput" class="date-input" required>
-            <label for="timeInput"> At :</label>
-            <input type="time" id="timeInput" class="time-input" required>
-		<button class="button" type="submit" formaction="food.html">Submit</button>
-	</form>
 </body>
 </html>
